@@ -1,3 +1,4 @@
+import { StoreModule } from '@ngrx/store';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,6 +9,7 @@ import { QuestionComponent } from './components/presentation/question/question.c
 import { EmojiComponent } from './components/presentation/emoji/emoji.component';
 import { EmojiPipe } from './pipes/emoji.pipe';
 import { QuestionCardComponent } from './components/presentation/question-card/question-card.component';
+import { featureName, reducers } from './store/reducers'
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import { QuestionCardComponent } from './components/presentation/question-card/q
   imports: [
     CommonModule,
     GameRoutingModule,
-    InfrastructureModule
+    InfrastructureModule,
+    StoreModule.forFeature(featureName, reducers)
   ]
 })
 export class GameModule { }
