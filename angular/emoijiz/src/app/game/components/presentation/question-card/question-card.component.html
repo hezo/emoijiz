@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-header fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+        <mat-card-title>{{question}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+        <span fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+            <app-emoji *ngFor="let emoji of emojies; let i = index" [emoji]="emoji"></app-emoji>
+        </span>
+        <form fxFlex>
+            <mat-form-field>
+                <input matInput placeholder="answer">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="onClick('ff')"> Next</button>
+    </mat-card-actions>
+</mat-card>
