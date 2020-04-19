@@ -1,0 +1,15 @@
+@import '../mixins.scss';
+
+:host {
+    min-height: 320px;
+    min-width: 320px;
+    max-width: 50%;
+}
+
+.mat-card-content {
+    padding-top: 20px;
+}
+
+.mat-card-title {
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}

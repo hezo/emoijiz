@@ -1,3 +1,6 @@
 export interface Question {
-    id: string;
+    id: number;
+    question: string;
+    emojis: string[];
+    answer: string;
 }

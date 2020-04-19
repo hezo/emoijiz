@@ -37,6 +37,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -74,7 +75,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatTooltipModule,
     MatTreeModule,
     MatNativeDateModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatAutocompleteModule,
@@ -111,7 +113,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatTooltipModule,
     MatTreeModule,
     MatNativeDateModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [
   ]

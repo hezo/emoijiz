@@ -2,7 +2,7 @@ import { Exception } from './exception.model';
 import { EntityState } from '@ngrx/entity';
 
 export interface StoreState<T> extends EntityState<T> {
-    selectedId: string;
+    selectedId: number | null;
     callState: CallState;
 }
 

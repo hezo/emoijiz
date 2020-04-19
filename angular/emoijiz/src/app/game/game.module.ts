@@ -9,16 +9,27 @@ import { QuestionComponent } from './components/presentation/question/question.c
 import { EmojiComponent } from './components/presentation/emoji/emoji.component';
 import { EmojiPipe } from './pipes/emoji.pipe';
 import { QuestionCardComponent } from './components/presentation/question-card/question-card.component';
-import { featureName, reducers } from './store/reducers'
+import { featureName, reducers } from './store/reducers';
+import { GameStartComponent } from './components/smart/game-start/game-start.component'
+import { EffectsModule } from '@ngrx/effects';
+import { GameEffects } from './store/effects/game.effect';
+import { QuestionEffects } from './store/effects/question.effect';
 
 
 @NgModule({
-  declarations: [GameComponent, QuestionComponent, EmojiComponent, EmojiPipe, QuestionCardComponent],
+  declarations: [
+    GameComponent, 
+    QuestionComponent, 
+    EmojiComponent, 
+    EmojiPipe, 
+    QuestionCardComponent, GameStartComponent
+  ],
   imports: [
     CommonModule,
     GameRoutingModule,
     InfrastructureModule,
-    StoreModule.forFeature(featureName, reducers)
+    StoreModule.forFeature(featureName, reducers),
+    EffectsModule.forFeature([GameEffects, QuestionEffects])
   ]
 })
 export class GameModule { }

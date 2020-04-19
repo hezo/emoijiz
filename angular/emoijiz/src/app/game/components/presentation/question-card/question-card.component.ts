@@ -1,4 +1,6 @@
+import { Question } from './../../../models/question.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-question-card',
@@ -7,18 +9,22 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class QuestionCardComponent implements OnInit {
 
-  @Input() question:string;
-  @Input() emojies:string[];
-
+  @Input() question:Question;
   @Output() answer = new EventEmitter<string>();
 
-  constructor() { }
+  public form = this.fb.group({
+    answer: ['']
+  });
+
+  constructor(private fb:FormBuilder) { }
+
 
   ngOnInit(): void {
+
   }
 
-  onClick(input:string):void {
-    this.answer.emit(input);
+  onAnswer():void {
+    this.answer.emit(this.form.get('answer').value);
   }
 
 }

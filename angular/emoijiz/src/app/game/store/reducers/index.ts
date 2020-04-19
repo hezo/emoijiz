@@ -1,14 +1,18 @@
+import { Question } from './../../models/question.model';
 import { AppState } from './../../../reducers/index';
 import { Game } from './../../models/game.model';
 import { StoreState } from 'src/app/infrastructure/models/storeState.model';
 import { RootStoreConfig, ActionReducerMap } from '@ngrx/store';
 
 import { reducer as gameReducer }  from './game.reducer'
+import { reducer as questionReducer }  from './question.reducer'
+
 
 export const featureName = 'game';
 
 export interface GameState {
-    game: StoreState<Game>
+    game: StoreState<Game>,
+    question: StoreState<Question>
 }
 
 export interface State extends AppState {
@@ -16,5 +20,6 @@ export interface State extends AppState {
 }
 
 export const reducers: ActionReducerMap<GameState> = {
-    game: gameReducer
+    game: gameReducer,
+    question: questionReducer
 }
