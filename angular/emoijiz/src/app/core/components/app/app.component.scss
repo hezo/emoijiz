@@ -1,4 +1,8 @@
 :host {
   min-height: 100vh;
   display: block;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
