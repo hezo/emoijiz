@@ -27,5 +27,5 @@ export const reducer = createReducer(
     })),
     on(select, (state, { id }) => produce(state, draft => {
         draft.selectedId = id;
-    })),
+    }))
 );

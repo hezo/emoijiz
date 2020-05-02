@@ -10,6 +10,10 @@ export const addQuestions = createAction(
     props<{ payload: Question | Question[] }>()
 );
 
+export const next = createAction(
+    'next question'
+)
+
 export const end = createAction(
     'end game'
 );

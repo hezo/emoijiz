@@ -9,22 +9,23 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class QuestionCardComponent implements OnInit {
 
-  @Input() question:Question;
+  @Input() question: Question;
   @Output() answer = new EventEmitter<string>();
 
   public form = this.fb.group({
     answer: ['']
   });
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb: FormBuilder) { }
 
 
   ngOnInit(): void {
 
   }
 
-  onAnswer():void {
+  onAnswer(): void {
     this.answer.emit(this.form.get('answer').value);
+    this.form.get('answer').setValue("");
   }
 
 }

@@ -1,3 +1,4 @@
+import { Answer } from './../../models/aswer.model';
 import { Question } from './../../models/question.model';
 import { createAction, props } from '@ngrx/store';
 
@@ -9,7 +10,7 @@ export const addQuestions = createAction(
 
 export const answer = createAction(
     'answer',
-    props<{ answer: string }>()
+    props<{ answer: Answer }>()
 )
 
 export const skip = createAction(
@@ -20,5 +21,3 @@ export const select = createAction(
     'select',
     props<{ id: number }>()
 )
-
-

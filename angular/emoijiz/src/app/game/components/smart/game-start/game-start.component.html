@@ -1,1 +1,1 @@
-<app-question-card [question]="question$ | async"></app-question-card>
+<app-question-card [question]="question$ | async" (answer)="onAnswer($event)"></app-question-card>
